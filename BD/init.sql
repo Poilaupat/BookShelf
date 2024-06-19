@@ -1,0 +1,49 @@
+DROP TABLE IF EXISTS T_BOOK
+DROP TABLE IF EXISTS T_USER
+DROP TABLE IF EXISTS R_USER_BOOK
+
+CREATE TABLE T_BOOK
+(
+	BookId	BIGINT NOT NULL
+	, BookName VARCHAR(200) NOT NULL
+)
+
+
+CREATE TABLE T_USER
+(
+	UserId	BIGINT NOT NULL
+	, UserName VARCHAR(200) NOT NULL
+)
+
+CREATE TABLE R_USER_BOOK
+(
+	BookId	BIGINT NOT NULL
+	, UserId BIGINT  NOT NULL
+	, BorrowBeginDate DATE NOT NULL
+	, BorrowEndDate DATE NULL
+)
+
+GO
+
+
+INSERT INTO T_USER 
+Select 1, 'Mathis'
+
+INSERT INTO T_USER 
+Select 2, 'Angèle'
+
+INSERT INTO T_USER 
+Select 3, 'Ruben'
+
+INSERT INTO T_USER 
+Select 4, 'David'
+
+
+INSERT INTO T_BOOK 
+Select 1, 'Le seigneur des anneaux'
+
+INSERT INTO T_BOOK 
+Select 2, 'Le nom de la rose'
+
+INSERT INTO T_BOOK 
+Select 3, 'Tintin au Tibet'

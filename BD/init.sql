@@ -4,14 +4,14 @@ DROP TABLE IF EXISTS R_USER_BOOK
 
 CREATE TABLE T_BOOK
 (
-	BookId	BIGINT NOT NULL
+	BookId	BIGINT IDENTITY(1 , 1) PRIMARY KEY
 	, BookName VARCHAR(200) NOT NULL
 )
 
 
 CREATE TABLE T_USER
 (
-	UserId	BIGINT NOT NULL
+	UserId	BIGINT IDENTITY(1 , 1) PRIMARY KEY
 	, UserName VARCHAR(200) NOT NULL
 )
 
@@ -27,23 +27,23 @@ GO
 
 
 INSERT INTO T_USER 
-Select 1, 'Mathis'
+Select 'Mathis'
 
 INSERT INTO T_USER 
-Select 2, 'Angèle'
+Select 'Angèle'
 
 INSERT INTO T_USER 
-Select 3, 'Ruben'
+Select 'Ruben'
 
-INSERT INTO T_USER 
-Select 4, 'David'
+INSERT INTO T_USER
+Select 'David'
 
 
 INSERT INTO T_BOOK 
-Select 1, 'Le seigneur des anneaux'
+Select 'Le seigneur des anneaux'
 
 INSERT INTO T_BOOK 
-Select 2, 'Le nom de la rose'
+Select 'Le nom de la rose'
 
 INSERT INTO T_BOOK 
-Select 3, 'Tintin au Tibet'
+Select 'Tintin au Tibet'

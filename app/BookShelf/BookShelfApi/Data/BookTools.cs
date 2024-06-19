@@ -15,11 +15,11 @@ namespace BookShelfApi.Data
             {
                 using(SqlCommand cmd = cnx.CreateCommand())
                 {
-                    cmd.CommandType = System.Data.CommandType.TableDirect;
-                    cmd.CommandText = "T_BOOK";
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = "Select * from T_BOOK";
 
                     var table = new DataTable(_connectionString);
-
+                    cnx.Open();
                     using (var adapter = new SqlDataAdapter(cmd))
                     {
                         adapter.Fill(table);

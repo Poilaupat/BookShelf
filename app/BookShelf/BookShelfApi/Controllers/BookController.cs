@@ -20,5 +20,11 @@ namespace BookShelfApi.Controllers
         {
             return BookTools.GetBooks();
         }
+
+        [HttpPost("/add/{bookName}")]
+        public void Add(string bookName)
+        {
+            BookTools.AddBook(bookName);
+        }
     }
 }

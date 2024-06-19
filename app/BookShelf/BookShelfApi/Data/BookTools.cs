@@ -31,7 +31,22 @@ namespace BookShelfApi.Data
                     }    
                 }
             }
-            
+        }
+
+        public static void AddBook(string bookName)
+        {
+            using (SqlConnection cnx = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = cnx.CreateCommand())
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = $"insert into T_BOOK(BookName) values({bookName})";
+                    
+                    cnx.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
     }
